@@ -16,8 +16,6 @@ const {
 const { protect, restrictTo } = require("../controllers/auth-controller");
 router.get(
   "/",
-  protect,
-  restrictTo("ADMIN", "USER"),
   asyncHandler(getAllProducts)
 );
 
@@ -30,9 +28,9 @@ router.post(
   asyncHandler(addProduct)
 );
 
-router.get("/:id", protect, restrictTo("ADMIN"), asyncHandler(getProductById));
+router.get("/:id", asyncHandler(getProductById));
 
-router.patch(
+router.put(
   "/:id",
   protect,
   restrictTo("ADMIN"),

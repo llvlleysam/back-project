@@ -9,7 +9,7 @@ const apiRouter = require('./routers/api-router');
 
 const cors = require('cors');
 const app = express();
-app.use(cors({ origin: '*' }));
+app.use(cors({origin: "*","methods": "GET,HEAD,PUT,PATCH,POST,DELETE",}));
 
 // database Connection
 connectToDatabase().then(() => addAdmin());

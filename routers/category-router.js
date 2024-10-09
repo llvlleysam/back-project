@@ -14,7 +14,7 @@ const {
   uploadCategoryIcon,
 } = require("../controllers/category-controller");
 const { protect, restrictTo } = require("../controllers/auth-controller");
-router.get("/", protect, restrictTo("ADMIN"), asyncHandler(getAllCategories));
+router.get("/", asyncHandler(getAllCategories));
 
 router.post(
   "/",
@@ -25,7 +25,7 @@ router.post(
   asyncHandler(addCategory)
 );
 
-router.get("/:id", protect, restrictTo("ADMIN"), asyncHandler(getCategoryById));
+router.get("/:id", asyncHandler(getCategoryById));
 
 router.patch(
   "/:id",

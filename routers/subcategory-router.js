@@ -15,8 +15,6 @@ const {
 const { protect, restrictTo } = require("../controllers/auth-controller");
 router.get(
   "/",
-  protect,
-  restrictTo("ADMIN"),
   asyncHandler(getAllSubcategories)
 );
 
@@ -30,8 +28,6 @@ router.post(
 
 router.get(
   "/:id",
-  protect,
-  restrictTo("ADMIN"),
   asyncHandler(getSubcategoryById)
 );
 

@@ -21,7 +21,7 @@ const resizeCategoryIcon = async (categoryId, file = null) => {
 	const iconFilename = `categories-${categoryId}-${Date.now()}.png`;
 
 	await sharp(icon.buffer)
-		.resize(50, 50)
+		// .resize(50, 50)
 		.toFormat('png')
 		.png({ quality: 100 })
 		.toFile(

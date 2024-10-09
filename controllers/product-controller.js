@@ -117,7 +117,6 @@ const resizeProductThumbnail = async (productId, files) => {
   const thumbnailFilename = `products-${productId}-${Date.now()}.jpeg`;
 
   await sharp(thumbnail[0].buffer)
-    .resize(1500, 800)
     .toFormat('jpeg')
     .jpeg({ quality: 95 })
     .toFile(
