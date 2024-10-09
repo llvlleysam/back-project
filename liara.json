@@ -1,0 +1,9 @@
+{
+  "app": "perfum-api",
+  "disks": [
+    {
+      "name": "public",
+      "mountTo": "public"
+    }
+  ]
+}
