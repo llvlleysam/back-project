@@ -17,8 +17,6 @@ router.get("/", protect, restrictTo("ADMIN"), asyncHandler(getAllOrders));
 
 router.post(
   "/",
-  protect,
-  restrictTo("ADMIN"),
   validator(createOrderValidationSchema),
   asyncHandler(createOrder)
 );
